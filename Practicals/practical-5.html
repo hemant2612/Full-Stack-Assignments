@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Image Map</title>
+    <style>
+        .image-map {
+            text-align: center;
+            background-color:rgba(150,0,150,.4);
+            padding:2rem 0 3rem 0;
+            height:100vh;
+        }
+        /* .subject-image {
+            width:40%;
+            height:55%;
+        } */
+        .menu-bar {
+            border: .3rem solid black;
+        }
+        h1 {
+            color:white;
+            font-size: 3rem;
+        }
+        h2 {
+            color:red;
+            text-shadow: 0 0 .1rem #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-map">
+
+        <img src="../img/imagemap-1.png" alt="menu image" class="menu-bar" usemap="#menu">
+        <map name="menu">
+            <area shape="rect" coords="2,2,104,74" href="../index.html" alt="home page">
+            <area shape="rect" coords="104,2,285,74" href="Practical-1.html" alt="practical-1">
+            <area shape="rect" coords="285,2,464,74" href="Practical-2.html" alt="practical-2">
+            <area shape="rect" coords="464,2,642,74" href="Practical-3.html" alt="practical-3">
+            <area shape="rect" coords="642,2,824,74" href="Practical-4.html" alt="practical-4">
+            <area shape="rect" coords="824,2,1004,74" href="#" alt="practical-5">
+        </map>
+        <h1>Introduction to Front-End Technologies</h1>
+        <img src="../img/imagemap-8.jpg" alt="subjects image" class="subject-image" usemap="#subjects">
+        <map name="subjects">
+            <area shape="rec" coords="47,32,151,138" href="../pages/prac5-htmlPage.html" alt="html page" target="_blank">
+            <area shape="circle" coords="233,90,67" href="../pages/prac5-CssPage.html" alt="Css page" target="_blank">
+            <area shape="rect" coords="49,161,150,254" href="../pages/prac5-JSPage.html" alt="js page" target="_blank">
+            <area shape="poly" coords="233,165,272,179,267,227,232,247,197,228,197,176" href="../pages/prac5-BootPage.html" alt="B page" target="_blank">
+        </map>
+        <!-- 47,33,151,137   cir-233,90,67 -->
+        <h2>Click on any part of logo to know more about these technologies.</h2>
+
+    </div>
+    
+</body>
+</html>
