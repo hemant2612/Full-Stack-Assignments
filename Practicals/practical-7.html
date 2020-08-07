@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+            text-transform: capitalize;
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            margin:2rem 2rem 0 2rem;
+            padding:2rem;
+            /* background-color:white; */
+            box-shadow: 0 1rem 4rem wheat;
+            
+        }
+        .header{
+            background-color: lightslategray;
+            text-align: center;
+            font-size: 2rem;
+            color:white;
+            padding:.5rem 2rem;
+            margin-bottom: 1rem;
+        }
+        .banner{
+            width:100%;
+            height:350px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 2rem;
+        }
+        .images-block{
+           
+            text-align: center;
+            
+
+        }
+        .images-block .image{
+            display:flex;
+            justify-content: space-evenly;
+        }
+        .img1,.img2,.img3,.img4{
+            background-color:orangered;
+            width:10rem;
+            height:10rem;
+            border-radius: 50%;
+            box-shadow: 0 .2rem .7rem rgba(0,0,0,.6);
+        }
+        .split-block{
+            
+            text-align: center;
+            
+            
+        }
+        .split-block .content{
+            display: flex;
+            
+        }
+        .split-block .main{
+            width:45rem;
+            height:25rem;
+            background-color: lightslategrey;
+            margin-right: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            
+        }
+        .split-block .articles{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width:35rem;
+            flex-grow: 1;
+            
+        }
+        .split-block .article{
+            background-color: orangered;
+            width:100%;
+            height:7rem;
+            
+            color: whitesmoke;
+            
+        }
+        .card-block{
+            text-align: center;
+           
+        }
+        .card-block .cards
+        {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            
+        }
+        .card-block .card{
+            
+            width:15rem;
+            height:17rem;
+            background:blueviolet;
+            margin:1rem 1rem;
+            
+        }
+        .footer-block{
+            text-align: center;
+        }
+        .footer{
+            background-color: lightslategray;
+            text-align: center;
+            font-size: 2rem;
+            color:white;
+            padding:.5rem 2rem;
+            
+        }
+        h1,h2{
+            margin:1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">header</header>
+        <div class="banner center">banner</div>
+        <section class="images-block">
+            <h1 class="image-heading">section-1</h1>
+            <div class="image">
+                <div class="img1"></div>
+                <div class="img2"></div>
+                <div class="img3"></div>
+                <div class="img4"></div>
+            </div>
+            
+        </section>
+        <section class="split-block">
+            <h1 class="split-heading">section-2</h1>
+            <div class="content">
+                <div class="main center">main content</div>
+                <div class="articles">
+                    <div class="article center">article1</div>
+                    <div class="article center">article2</div>
+                    <div class="article center">article3</div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="card-block">
+            <h1 class="card-heading">section-3</h1>
+            <div class="cards">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            
+        </section>
+        <div class="footer-block">
+            <h2 class="heading">section-4</h2>
+            <footer class="footer">
+                footer
+            </footer>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
