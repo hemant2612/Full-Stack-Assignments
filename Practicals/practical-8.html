@@ -10,6 +10,7 @@
             padding:0;
             font-family: sans-serif;
             text-transform: capitalize;
+            z-index: 1;
         }
         .center{
             display: flex;
@@ -17,9 +18,10 @@
             align-items: center;
         }
         .container{
-            margin:2rem 2rem 0 2rem;
-            padding:1rem 2rem;
-            box-shadow: 0 1rem 4rem wheat;
+            
+            padding:0 2rem;
+            padding-bottom: 1rem;
+            
             
         }
         .header{
@@ -27,6 +29,9 @@
             text-align: center;
             padding:.5rem 2rem;
             margin-bottom: 1rem;
+            position: sticky;
+            top:0;
+            z-index: 2;
         }
         .menu{
             
@@ -61,7 +66,7 @@
             top:2%;
             left:5%;
             font-size: 4vw;
-            /* color: black; */
+            
             
         }
         .images-block{
@@ -224,7 +229,8 @@
             
         }
         h1,h2{
-            margin:1rem 0;
+            margin:2rem 0;
+            margin-top:8rem;
             font-size: 2.5vw;
         }
         .footer #last{
@@ -263,6 +269,7 @@
         </section>
         <a name="about-us"></a>
         <section class="split-block">
+            
             <h1 class="split-heading">About Us</h1>
             <div class="content">
                 
