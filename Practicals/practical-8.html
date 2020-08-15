@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+            text-transform: capitalize;
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            margin:2rem 2rem 0 2rem;
+            padding:1rem 2rem;
+            box-shadow: 0 1rem 4rem wheat;
+            
+        }
+        .header{
+            background-color: lightslategray;
+            text-align: center;
+            padding:.5rem 2rem;
+            margin-bottom: 1rem;
+        }
+        .menu{
+            
+            width:100%;
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+        }
+        .menu .bar a{
+            display: inline-block;
+            font-size:2vw;
+            text-decoration:none;
+            color:white;
+            padding:1rem 1rem;
+        }
+        .menu .bar:hover{
+           background-color: salmon;
+        }
+        .banner{
+            width:100%;
+            height:500px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 2rem;
+            background:url(../img/emile-perron-xrVDYZRGdw4-unsplash.jpg) center no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .banner .heading{
+            display: inline-block;
+            position: absolute;
+            top:2%;
+            left:5%;
+            font-size: 4vw;
+            /* color: black; */
+            
+        }
+        .images-block{
+           
+            text-align: center;
+            
+
+        }
+        .images-block .image{
+            display:flex;
+            justify-content: space-evenly;
+        }
+        .pic{
+            background-color:orangered;
+            width:10rem;
+            height:10rem;
+            border-radius: 50%;
+            box-shadow: 0 .2rem .7rem rgba(0,0,0,.6);
+            background-size: contain;
+        }
+        .img1{
+            background: url(../img/1.png) center no-repeat;
+        }
+        .img2{
+            background: url(../img/2.png) center no-repeat;
+        }
+        .img3{
+            background: url(../img/3.png) center no-repeat;
+        }
+        .img4{
+            background: url(../img/9.png) center no-repeat;
+        }
+        .split-block{
+            
+            text-align: center;
+            
+            
+        }
+        .split-block .content{
+            display: flex;
+            position: relative;
+            
+        }
+        .split-block .main{
+            width:45rem;
+            height:30rem;
+            background-color: lightslategrey;
+            margin-right: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            
+        }
+        .split-block .main h3{
+            position: absolute;
+            left:2.5%;
+            font-size: 3vw;
+            font-weight: 500;
+        }
+        .split-block .main p{
+            position: absolute;
+            text-align: justify;
+            color: white;
+            top:5rem;
+            font-size:1.8vw;
+            margin:0 1rem;
+            box-sizing: border-box;
+        }
+        .split-block .articles{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width:35rem;
+            flex-grow: 1;
+            
+        }
+        .split-block .article{
+            background-color: orangered;
+            width:100%;
+            height:9rem;
+            text-align: center;
+            color: black;
+            font-size: 1.5rem;
+            
+            
+        }
+        .split-block .one{
+            background: url(../img/p1.jpg) no-repeat;
+            background-size: cover;
+        }
+        .split-block .two{
+            background: url(../img/p2.jpeg)  no-repeat;
+            background-size: cover;
+        }
+        .split-block .three{
+            background: url(../img/p3.jpg)  no-repeat;
+            background-size: cover;
+        }
+        .card-block{
+            text-align: center;
+           
+        }
+        .card-block .cards
+        {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            
+        }
+        .card-block .card{
+            border:.03rem solid rgba(0,0,0,.2);
+            width:15rem;
+            height:25rem;
+            background:blueviolet;
+            margin:1rem 1rem;
+        
+            
+        }
+        .card-block .card img{
+            width:inherit;
+            height:8.5rem;
+        }
+        .card-block .card h1{
+            margin:.5rem  auto;
+            padding:0;
+            font-size: 1rem;
+        }
+        .card-block .card p{
+            text-align: justify;
+            color: white;
+            margin:0 1rem;
+            /* box-sizing: border-box; */
+        }
+        .card-block .card a{
+            display: block;
+            background: red;
+            color: white;
+            font-size: 1.3rem;
+            text-decoration: none;
+            margin:1rem;
+            padding:.5rem 1rem;
+            border-radius: 1rem;
+            transition: all .5s;
+        }
+        .card-block .card a:hover{
+            background: blue;
+            color:black;
+        }
+        .footer-block{
+            text-align: center;
+        }
+        .footer{
+            background-color: lightslategray;
+            text-align: center;
+            font-size: 1rem;
+            color:black;
+            padding:2rem 2rem;
+            
+        }
+        h1,h2{
+            margin:1rem 0;
+            font-size: 2.5vw;
+        }
+        .footer #last{
+            display: block;
+            margin: 1.5rem auto 0;
+        }
+
+    </style>
+</head>
+<body>
+    <a name="top"></a>
+    <div class="container">
+        
+        <header class="header">
+            <ul class="menu">
+                <li class="bar center"><a href="#home">Home</a></li>
+                <li class="bar center"><a href="#about-us">About Us</a></li>
+                <li class="bar center"><a href="#team">team</a></li>
+                <li class="bar center"><a href="#techno">technologies</a></li>
+                <li class="bar center"><a href="#contact">contact</a></li>
+            </ul>
+        </header>
+        <div class="banner">
+            <h3 class="heading">Practical-8</h3>
+        </div>
+        <a name="team"></a>
+        <section class="images-block">
+            <h1 class="image-heading">Team Members</h1>
+            <div class="image">
+                <div class="pic img1"></div>
+                <div class="pic img2"></div>
+                <div class="pic img3"></div>
+                <div class="pic img4"></div>
+            </div>
+            
+        </section>
+        <a name="about-us"></a>
+        <section class="split-block">
+            <h1 class="split-heading">About Us</h1>
+            <div class="content">
+                
+                <div class="main ">
+                    <h3>About Projects</h3>
+                    <p class="paragraph">
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, alias tenetur corporis provident accusamus nesciunt aperiam quas ipsa nostrum pariatur.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur perspiciatis facere voluptatem aut explicabo, culpa fuga numquam, quo incidunt illo necessitatibus laudantium a reprehenderit libero placeat dolor quod cum expedita nobis deserunt! Sunt architecto quae a fugiat obcaecati cumque autem officia exercitationem adipisci voluptate quibusdam soluta, minus consequuntur eius veniam.
+                    </p>
+                </div>
+                <div class="articles">
+                    <div class="article one">Project-1</div>
+                    <div class="article two">Project-2</div>
+                    <div class="article three">Project-3</div>
+                </div>
+            </div>
+            
+        </section>
+        <a name="techno"></a>
+        <section class="card-block">
+            <h1 class="card-heading">Technologies Used</h1>
+            <div class="cards">
+                <div class="card">
+                    <img src="../img/html.png" alt="html image">
+                    <h1 class="heading">Introduction To Html</h1>
+                    <p class="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error corrupti velit similique. Nemo quibusdam totam libero cum dolorem mollitia autem, corrupti tempora. Architecto aut recusandae, ut magnam dolores ab facere.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="card"><img src="../img/css.jpeg" alt="Css image">
+                    <h1 class="heading">Introduction To Css</h1>
+                    <p class="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error corrupti velit similique. Nemo quibusdam totam libero cum dolorem mollitia autem, corrupti tempora. Architecto aut recusandae, ut magnam dolores ab facere.</p>
+                    <a href="#">Read More</a></div>
+                <div class="card"><img src="../img/js.png" alt="js image">
+                    <h1 class="heading">Introduction To Javascript</h1>
+                    <p class="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error corrupti velit similique. Nemo quibusdam totam libero cum dolorem mollitia autem, corrupti tempora. Architecto aut recusandae, ut magnam dolores ab facere.</p>
+                    <a href="#">Read More</a></div>
+                <div class="card"><img src="../img/B.png" alt=" B image">
+                    <h1 class="heading">Introduction To Bootstrap</h1>
+                    <p class="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error corrupti velit similique. Nemo quibusdam totam libero cum dolorem mollitia autem, corrupti tempora. Architecto aut recusandae, ut magnam dolores ab facere.</p>
+                    <a href="#">Read More</a></div>
+            </div>
+            
+        </section>
+        <a name="contact"></a>
+        <div class="footer-block">
+            <h2 class="heading">Contact</h2>
+            
+            <footer class="footer">
+                Website template for Practical-8 &copy; <a href="">Beta-Labs</a>
+                
+                <a href="#top" id="last"> Back to top</a>
+            </footer>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
