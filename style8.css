@@ -222,8 +222,8 @@ html{
     color: white;
     font-size: 1.3rem;
     text-decoration: none;
-    margin:1rem;
-    margin-bottom:.5rem;
+    margin: .5rem 1rem;
+   
     padding:.5rem 1rem;
     border-radius: 1rem;
     transition: all .5s;
