@@ -1,0 +1,356 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    z-index: 1;
+}
+html{
+    scroll-behavior: smooth;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    
+    padding:0 2rem;
+    padding-bottom: 1rem;
+}
+.header{
+    box-sizing: border-box;
+    background-color: lightslategray;
+    width:100%;
+    text-align: center;
+    padding:.5rem 2rem;
+    margin-bottom: 1rem;
+    height:80px;
+    position: sticky;
+    /* position: relative; */
+    top:0;
+    z-index: 2;
+    
+}
+
+.menu{
+    
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    /* flex-grow: 1; */
+    align-items: center;
+    
+}
+.menu .bar a{
+    display: inline-block;
+    font-size:1.8vw;
+    text-decoration:none;
+    color:white;
+    padding:.5rem 1rem;
+    text-transform: uppercase;
+}
+.menu .bar a:hover{
+   background-color: whitesmoke;
+   color: teal;
+}
+
+
+.banner{
+    width:100%;
+    height:500px;
+    background-color: blueviolet;
+    color: white;
+    font-size: 2rem;
+    background:url(img/emile-perron-xrVDYZRGdw4-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.banner .heading{
+    display: inline-block;
+    position: absolute;
+    top:2%;
+    left:5%;
+    font-size: 4vw;
+    
+    
+}
+.images-block{
+   
+    text-align: center;
+    
+
+}
+.image{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.pic{
+    /* background-color:orangered; */
+    width:13rem;
+    height:13rem;
+    margin:1rem 2rem;
+    border-radius: 50%;
+    box-shadow: 0 .2rem .7rem rgba(0,0,0,.6);
+    
+    /* flex-wrap: wrap; */
+}
+.img1{
+    background: url(img/1.png) center no-repeat;
+    background-size: cover;
+}
+.img2{
+    background: url(img/2.png) center no-repeat;
+    background-size: cover;
+}
+.img3{
+    background: url(img/3.png) center no-repeat;
+    background-size: cover;
+}
+.img4{
+    background: url(img/9.png) center no-repeat;
+    background-size: cover;
+}
+.split-block{
+    
+    text-align: center;
+    
+    
+}
+.split-block .content{
+    display: flex;
+}
+.split-block .main{
+    width:45rem;
+    height:30rem;
+    background-color: lightslategrey;
+    margin-right: 1rem;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    /* box-sizing: border-box; */
+    overflow: hidden;
+    position: relative;
+    
+}
+.content .main h3{
+    position: absolute;
+    left:2.5%;
+    font-size: 3vw;
+    font-weight: 500;
+}
+.content .main p{
+    position: absolute;
+    text-align: justify;
+    color: white;
+    top:5rem;
+    font-size:1.8vw;
+    margin:0 1rem;
+    /* box-sizing: border-box; */
+}
+.split-block .articles{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width:35rem;
+    
+    
+}
+.split-block .article{
+    background-color: orangered;
+    width:100%;
+    height:8rem;
+    color: black;
+    font-size: 1.5rem;
+    flex-grow: 1;
+}
+.articles .one, .articles .two{
+    margin-bottom: .5rem;
+}
+.articles .one{
+    background: url(img/p1.jpg) no-repeat;
+    background-size: cover;
+}
+.split-block .two{
+    background: url(img/p2.jpeg)  no-repeat;
+    background-size: cover;
+}
+.split-block .three{
+    background: url(img/p3.jpg)  no-repeat;
+    background-size: cover;
+}
+.card-block{
+    text-align: center;
+   
+}
+.card-block .cards
+{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.card-block .card{
+    border:.03rem solid rgba(0,0,0,.2);
+    width:15rem;
+    height:25rem;
+    background:blueviolet;
+    margin:1rem 1rem;
+
+    
+}
+.card-block .card img{
+    width:inherit;
+    height:8.5rem;
+}
+.card-block .card h1{
+    margin:.5rem  auto;
+    padding:0;
+    font-size: 1rem;
+}
+.card-block .card p{
+    text-align: justify;
+    color: white;
+    margin:0 1rem;
+    
+}
+.card-block .card a{
+    display: block;
+    background: red;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin:1rem;
+    padding:.5rem 1rem;
+    border-radius: 1rem;
+    transition: all .5s;
+}
+.card-block .card a:hover{
+    background: blue;
+    color:black;
+}
+.footer-block{
+    text-align: center;
+}
+.footer{
+    background-color: lightslategray;
+    text-align: center;
+    font-size: 1rem;
+    color:black;
+    padding:2rem 2rem;
+    
+}
+h1,h2{
+    margin:2rem 0;
+    margin-top:8rem;
+    font-size: 2.5vw;
+}
+.footer #last{
+    display: block;
+    margin: 1.5rem auto 0;
+}
+.show-btn, .hide-btn{
+    position:absolute;
+    right:10px;
+    top:10px;
+    font-size: 2rem;
+    line-height: 30px;
+    display: none;
+    color:white;
+}
+
+input{
+    display: block;
+    visibility: hidden;
+
+}
+@media (max-width:1150px){
+    .image .pic{
+        margin:1rem 5rem;
+        width:18rem;
+        height:18rem;
+    }
+    .cards .card{
+        margin: 1.3rem 4rem;
+        width:20rem;
+    height:28rem;
+    font-size: 1.319rem;
+    }
+    .cards .card h1{
+        font-size: 1.4rem;
+    }
+}
+@media (max-width:900px){
+    .show-btn, .hide-btn{
+        display: block;
+        
+    }
+    .container{
+    
+        padding:0;
+    }
+    .header{
+        
+        height:50px;
+    }
+    .menu{
+        position: fixed;
+        top:0;
+        right:-100%;
+        width:100%;
+        height:100vh;
+        background:lightslategray;
+        text-align:center;
+        flex-direction: column;
+        transition: all .4s;
+    }
+    .menu .bar a{
+        display: block;
+        margin:0;
+        font-size:5vw;
+        
+    }
+    .split-block .main p{
+        font-size: 2.5vw;
+    }
+    #chk:checked ~ .menu{
+        right:0;
+        
+    }
+    .split-block .content{
+        flex-direction: column;
+        margin:0 1rem;
+    }
+    .split-block .main{
+        height:20rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .split-block .articles{
+        width: 100%;
+    }
+    .split-block .articles .article{
+        height: 11rem;
+    }
+    h1,h2{
+        font-size: 5vw;
+    }
+}
+@media (max-width:600px){
+    .split-block .main p{
+        font-size: 3vw;
+    }
+    .split-block .main h3{
+        font-size: 1.4rem;
+    }
+    h1,h2{
+        font-size: 7vw;
+    }
+}
+@media (max-width:400px){
+    .split-block .main p{
+        font-size: 3.8vw;
+    }
+}
