@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Practical 15</title>
+
+    <style>
+
+        body{
+
+            background: skyblue;
+
+            box-sizing: border-box;
+
+        }
+
+        h1{
+
+           text-transform: capitalize;
+
+           color:slateblue;
+
+           font-size: 60px;
+
+           text-align: center;
+
+        }   
+
+        .btn  
+
+        {
+
+          display: flex;
+
+          position: absolute;
+
+          background: coral;
+
+          top:30%;
+
+          width: 100px;
+
+          height: 70px;
+
+          font-size: 70px;
+
+         align-items: center;
+
+         justify-content: center;
+
+          
+
+        }
+
+        .decrement
+
+        {
+
+           left:30%;
+
+         }
+
+         .increment
+
+        {
+
+           left:60%;
+
+         }
+
+         p{
+
+             position: absolute;
+
+             top:30%;
+
+             left:48%;
+
+             color:darkblue;
+
+             font-size: 70px;
+
+             margin: 0;
+
+         }
+
+         </style>
+
+</head>
+
+<body>
+
+    <h1>counter</h1>
+
+    <button class="btn decrement" onclick="change(-1)">-</button>
+
+    <button class="btn increment" onclick="change(1)">+</button>
+
+    <p></p>
+
+    <script>
+
+        var decrement=document.getElementsByClassName("decrement");
+
+        var text=document.getElementsByTagName("p");
+
+        var increment=document.getElementsByClassName("increment");
+
+        var n=0;
+
+        display(n);
+
+        disable();
+
+        function disable()
+
+        {
+
+           if(n==0)
+
+           { decrement[0].disabled=true;
+
+         }
+
+           else{
+
+            decrement[0].disabled=false;
+
+           }
+
+        }
+
+        function change(a)
+
+        {
+
+         n=n+a;
+
+        disable();
+
+         display(n);
+
+        }
+
+        function display(n)
+
+        {
+
+            text[0].innerText=n;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
