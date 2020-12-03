@@ -183,11 +183,11 @@
         perspective: 100rem;
     }
 
-    video {
+    /* video {
         position: fixed;
         opacity: .9;
         z-index: -1;
-    }
+    } */
 
     .header-text {
         text-align: center;
@@ -334,10 +334,65 @@
         background: #ddd;
         color: black;
     }
-    video{
-        background-size: cover;
-        
-    } */
+    
+     */
+    @media (max-width: 1000px) {
+    .nav-list {
+      flex-direction: column;
+    }
+  
+    .nav-link {
+      flex-grow: 1;
+    }
+  
+    .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+  
+    .heading {
+      font-size: 6rem;
+    }
+  
+    .header-paragraph {
+      font-size: 2.5rem;
+    }
+  }
+  @media (max-width: 800px) {
+    .header-paragraph {
+      display: none;
+    }
+  }
+  @media (max-width: 650px) {
+    .container {
+      margin: 0;
+    }
+  
+    .open-navbar-icon {
+      top: 2.5rem;
+      left: 2.5rem;
+    }
+  
+    .navbar-wrapper {
+      padding: 0;
+    }
+  
+    .close-navbar-icon {
+      right: 4rem;
+    }
+  
+    .header {
+      height: 100vh;
+    }
+  }
+  @media (max-width: 500px) {
+    html {
+      font-size: 45%;
+    }
+  }
 </style>
 
 <body>
@@ -369,7 +424,9 @@
         <header class="header center">
             <!-- <video playsinline autoplay muted loop id="myVideo" controls>
 
-                <source src="https://cdn.videvo.net/videvo_files/video/free/2019-03/small_watermarked/181015_Extra_DanangDrone_004_preview.webm" type="video/mp4">
+                <source src="../img/bg.mp4" type="video/mp4">    <-- video Path given.....
+       Direct video link given.. <source src="https://cdn.videvo.net/videvo_files/video/free/2019-03/small_watermarked/181015_Extra_DanangDrone_004_preview.webm" type="video/mp4">
+                    
             </video> -->
             <div class="header-text">
                 <h1 class="heading">Around the world</h1>
@@ -391,7 +448,7 @@
                     <span class="center">d</span>
                 </h1>
             </div>
-<!--             <button id="myBtn" onclick="myFunction()">Pause</button> -->
+            <!-- <button id="myBtn" onclick="myFunction()">Pause</button> -->
         </header>
         <!-- End of Header -->
     </div>
