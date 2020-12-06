@@ -1,501 +1,200 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,600,700,900&display=swap" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="style.css" /> -->
-    <title>The Road</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multilevelform</title>
+    <link rel="stylesheet" href="../css/prac19style.css">
 </head>
 <style>
-    /* Common Styles */
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: "Vollkorn", serif;
-        list-style-type: none;
-        text-decoration: none;
-        box-sizing: border-box;
-        outline: none;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: darkgray;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 360px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.container form{
+    width: 280px;
+    position: absolute;
+    left: 40px;
+    top: 80px;
+    transition: .5s;
+}
+form h3{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #777;
 
-    html {
-        font-size: 62.5%;
-    }
+}
+form input{
+width: 100%;
+padding: 10px 5px;
+margin: 5px 0px;
+border: none;
+outline: none;
+border-bottom: 1px solid #777;
+background: transparent;
+}
+.btn-box{
+    margin: 30px auto;
+    text-align: center;
+}
+form button{
+    width: 120px;
+    height: 35px;
+    background-color: crimson;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+}
+#form2{
+    left: 450px;
+}
+#form3{
+    left: 450px;
+}
+.step-row{
+    width: 360px;
+    height: 40px;
+    box-shadow: 0px -1px 5px -1px #000;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.step-col{
+    width: 120px;
+    text-align: center;
+    z-index: 1;
+}
+#progress{
+    width: 120px;
+    height: 100%;
+    background-color: crimson;
+    position: absolute;
+    transition: 1s;
 
-    :root {
-        --primary-color: #2b81e4;
-        --secondary-color: #eee;
-        --white-color: #fff;
-        --grey-color: #555;
-        --light-grey-color: #777;
-    }
-
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .container {
-        background-color: var(--secondary-color);
-        margin: 3.5rem;
-        box-shadow: 0 1rem 3rem var(--grey-color);
-        overflow: hidden;
-    }
-
-    /* End of Common styles */
-
-    /* Navbar */
-    .navbar-icon {
-        width: 5.5rem;
-        height: 5.5rem;
-        background-color: var(--white-color);
-        border-radius: 50%;
-        cursor: pointer;
-        flex-direction: column;
-    }
-
-    .open-navbar-icon {
-        position: fixed;
-        top: 6.5rem;
-        left: 6.5rem;
-        z-index: 200;
-    }
-
-    .navbar-icon .line {
-        height: 0.2rem;
-        width: 3.5rem;
-        background-color: var(--light-grey-color);
-    }
-
-    .open-navbar-icon .line {
-        margin: 0.3rem 0;
-    }
-
-    .navbar-wrapper {
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.7);
-        position: fixed;
-        left: 0;
-        bottom: -100%;
-        opacity: 0;
-        z-index: 300;
-        padding: 3.5rem 5.5rem 3.5rem 3.5rem;
-        /* padding: 3.5rem 5.5rem 3rem 3.5rem; */
-        transition: bottom 0.5s, opacity 0.2s;
-    }
-
-    .change .navbar-wrapper {
-        bottom: 0;
-        opacity: 1;
-        transition: bottom 0.5s, opacity 0.2s 0.25s;
-    }
-
-    .navbar {
-        width: 101.5%;
-        height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-            url(images/navbar-bg.jpg) center no-repeat;
-        background-size: cover;
-        position: relative;
-        overflow-y: hidden;
-    }
-
-    .close-navbar-icon {
-        position: absolute;
-        top: 2.5rem;
-        right: 3rem;
-        z-index: 300;
-    }
-
-    .close-navbar-icon .line {
-        position: absolute;
-    }
-
-    .line-1 {
-        transform: rotate(40deg);
-    }
-
-    .line-2 {
-        transform: rotate(-40deg);
-    }
-
-    .nav-list {
-        height: 100%;
-        display: flex;
-    }
-
-    .nav-link {
-        font-size: 3rem;
-        font-weight: 700;
-        color: var(--white-color);
-        text-transform: uppercase;
-        width: 100%;
-        opacity: 0.8;
-        position: relative;
-        top: -100%;
-        transition: all 0.3s;
-    }
-
-    .change .nav-link {
-        top: 0;
-    }
-
-    .nav-link:hover {
-        opacity: 1;
-        color: var(--primary-color);
-    }
-
-    .change .nav-link:nth-child(1) {
-        transition: top 1s 0.4s, opacity 0.3s, color 0.3s;
-    }
-
-    .change .nav-link:nth-child(2) {
-        transition: top 1s 0.6s, opacity 0.3s, color 0.3s;
-    }
-
-    .change .nav-link:nth-child(3) {
-        transition: top 1s 0.8s, opacity 0.3s, color 0.3s;
-    }
-
-    .change .nav-link:nth-child(4) {
-        transition: top 1s 1s, opacity 0.3s, color 0.3s;
-    }
-
-    .change .nav-link:nth-child(5) {
-        transition: top 1s 1.2s, opacity 0.3s, color 0.3s;
-    }
-
-    /* End of Navbar */
-
-    /* Header */
-    .header {
-        width: 100%;
-        height: calc(100vh - 7rem);
-        background: linear-gradient(rgba(18, 113, 255, 0.5), rgba(18, 113, 255, 0.3)),
-        url(../img/header-bg.jpg) center no-repeat;
-        background-size: cover;
-        position: relative;
-        perspective: 100rem;
-    }
-
-    /* video {
-        position: fixed;
-        opacity: .9;
-        z-index: -1;
-    } */
-
-    .header-text {
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-        text-shadow: 0 0.3rem 0.5rem var(--grey-color);
-
-    }
-
-    .heading {
-        font-size: 8rem;
-        color: var(--white-color);
-    }
-
-    .header-paragraph {
-        font-size: 3rem;
-        font-weight: 500;
-        color: var(--secondary-color);
-        max-width: 70rem;
-        margin: auto;
-    }
-
-    .logo {
-        position: absolute;
-        top: 4rem;
-        right: 4rem;
-    }
-
-    .logo h1 {
-        display: flex;
-    }
-
-    .logo h1 span {
-        font-size: 2rem;
-        font-weight: 900;
-        color: var(--primary-color);
-        text-transform: uppercase;
-        background-color: var(--white-color);
-        width: 3.5rem;
-        height: 3.5rem;
-        margin: 0.5rem;
-        border-radius: 50%;
-    }
-
-    .logo h1 span:nth-child(1) {
-        animation: drop-letters 5s 0.1s infinite;
-    }
-
-    .logo h1 span:nth-child(2) {
-        animation: drop-letters 5s 0.2s infinite;
-    }
-
-    .logo h1 span:nth-child(3) {
-        animation: drop-letters 5s 0.3s infinite;
-    }
-
-    .logo h1 span:nth-child(4) {
-        animation: drop-letters 5s 0.4s infinite;
-    }
-
-    .logo h1 span:nth-child(5) {
-        animation: drop-letters 5s 0.5s infinite;
-    }
-
-    .logo h1 span:nth-child(6) {
-        animation: drop-letters 5s 0.6s infinite;
-    }
-
-    .logo h1 span:nth-child(7) {
-        animation: drop-letters 5s 0.7s infinite;
-    }
-
-    @keyframes drop-letters {
-        0% {
-            transform: translateY(0);
-        }
-
-        10% {
-            transform: translateY(0);
-        }
-
-        15% {
-            transform: translateY(-100%);
-        }
-
-        20% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    .header-image {
-        width: 35%;
-        animation: image-float 150s infinite;
-
-    }
-
-    @keyframes image-float {
-        0% {
-            transform: translateZ(40rem);
-            opacity: 1;
-        }
-
-        40% {
-            transform: translateZ(-500rem) translateX(150rem);
-            opacity: 0.8;
-        }
-
-        70% {
-            transform: translateZ(-1500rem) translateX(800rem);
-            opacity: 0.6;
-        }
-
-        80% {
-            transform: translateZ(-50rem) translateX(100rem);
-            opacity: 0.8;
-        }
-
-        100% {
-            transform: translateZ(40rem);
-            opacity: 1;
-        }
-    }
-
-    /* End of Header */
-    /* #myBtn {
-        margin: .5rem;
-        width: 80px;
-        font-size: 18px;
-        padding: 10px;
-        border: none;
-        background: #000;
-        color: #fff;
-        cursor: pointer;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-    }
-
-    #myBtn:hover {
-        background: #ddd;
-        color: black;
-    }
-    
-     */
-    @media (max-width: 1000px) {
-    .nav-list {
-      flex-direction: column;
-    }
-  
-    .nav-link {
-      flex-grow: 1;
-    }
-  
-    .header-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-    }
-  
-    .heading {
-      font-size: 6rem;
-    }
-  
-    .header-paragraph {
-      font-size: 2.5rem;
-    }
-  }
-  @media (max-width: 800px) {
-    .header-paragraph {
-      display: none;
-    }
-  }
-  @media (max-width: 650px) {
-    .container {
-      margin: 0;
-    }
-  
-    .open-navbar-icon {
-      top: 2.5rem;
-      left: 2.5rem;
-    }
-  
-    .navbar-wrapper {
-      padding: 0;
-    }
-  
-    .close-navbar-icon {
-      right: 4rem;
-    }
-  
-    .header {
-      height: 100vh;
-    }
-  }
-  @media (max-width: 500px) {
-    html {
-      font-size: 45%;
-    }
-  }
+}
+#progress::after{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    right: -20px;
+    border-left: 20px solid crimson;
+}
 </style>
-
 <body>
-    <div class="container">
-        <!-- Navbar -->
-        <div class="open-navbar-icon navbar-icon center">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <div class="navbar-wrapper">
-            <nav class="navbar">
-                <div class="close-navbar-icon navbar-icon center">
-                    <div class="line line-1"></div>
-                    <div class="line line-2"></div>
-                </div>
-                <div class="nav-list">
-                    <a href="#" class="nav-link center">Home</a>
-                    <a href="#" class="nav-link center">Tours</a>
-                    <a href="#" class="nav-link center">About Us</a>
-                    <a href="#" class="nav-link center">Offer</a>
-                    <a href="#" class="nav-link center">Contact</a>
-                </div>
-            </nav>
-        </div>
-        <!-- End of Navbar -->
+<div class="container">
+    <form id="form1">
+        <h3>Create Account</h3>
+        <input type="text" placeholder="enter email" >
+        <input type="password" placeholder="enter password" >
+        <input type="password" placeholder="confirm passsword" >
+<div class="btn-box">
+    <button type="button" id="next1">
+        Next
+    </button>
+</div>
+    </form>
 
-        <!-- Header -->
-        <header class="header center">
-            <!-- <video playsinline autoplay muted loop id="myVideo" controls>
 
-                <source src="../img/bg.mp4" type="video/mp4">    <-- video Path given.....
-       Direct video link given.. <source src="https://cdn.videvo.net/videvo_files/video/free/2019-03/small_watermarked/181015_Extra_DanangDrone_004_preview.webm" type="video/mp4">
-                    
-            </video> -->
-            <div class="header-text">
-                <h1 class="heading">Around the world</h1>
-                <p class="header-paragraph">
-                    "Traveling - it leaves you speechless, then turns you into a
-                    storyteller"
-                </p>
+    <form id="form2">
+        <h3>Social Links</h3>
+        <input type="text" placeholder="Linkedin" >
+        <input type="password" placeholder="Github" >
+        <input type="password" placeholder="Facebook" >
+<div class="btn-box">
+    <button type="button" id="back1">
+        Back
+    </button>
+    
+    <button type="button" id="next2">
+        Next
+    </button>
+</div>
+    </form>
 
-            </div>
-            <img src="../img/air-balloon.png" alt="Header Image" class="header-image" />
-            <div class="logo">
-                <h1>
-                    <span class="center">t</span>
-                    <span class="center">h</span>
-                    <span class="center">e</span>
-                    <span class="center">r</span>
-                    <span class="center">o</span>
-                    <span class="center">a</span>
-                    <span class="center">d</span>
-                </h1>
-            </div>
-            <!-- <button id="myBtn" onclick="myFunction()">Pause</button> -->
-        </header>
-        <!-- End of Header -->
+
+
+
+    <form id="form3">
+        <h3>Personal information</h3>
+        <input type="text" placeholder="First name" >
+        <input type="password" placeholder="Second name" >
+        <input type="password" placeholder="Mobile number" >
+<div class="btn-box">
+    <button type="button" id="back2">
+        Back
+    </button>
+    <button type="button">
+        Submit
+    </button>
+</div>
+    </form>
+    <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>step1</small></div>
+        <div class="step-col"><small>step2</small></div>
+        <div class="step-col"><small>step3</small></div>
     </div>
-    <!-- <script src="script.js"></script> -->
-    <script>
-        const container = document.querySelector(".container");
-
-        document.querySelector(".open-navbar-icon").addEventListener("click", () => {
-            container.classList.add("change");
-        });
-
-        document.querySelector(".close-navbar-icon").addEventListener("click", () => {
-            container.classList.remove("change");
-        });
-
-        const colors = ["#6495ed", "#7fffd4", "#ffa07a", "#f08080", "#afeeee"];
-
-        let i = 0;
-
-        Array.from(document.querySelectorAll(".nav-link")).forEach(item => {
-            item.style.cssText = `background-color: ${colors[i++]}`;
-        });
-
-        Array.from(document.querySelectorAll(".navigation-button")).forEach(item => {
-            item.onclick = () => {
-                item.parentElement.parentElement.classList.toggle("change");
-            };
-        });
+</div>
 
 
-        // video
-        var video = document.getElementById("myVideo");
 
-        // button
-        var btn = document.getElementById("myBtn");
+    <script >    //selector
+const form1 = document.getElementById('form1');
+const form2 = document.getElementById('form2');
+const form3 = document.getElementById('form3');
 
 
-        function myFunction() {
-            if (video.paused) {
-                video.play();
-                btn.innerHTML = "Pause";
-            } else {
-                video.pause();
-                btn.innerHTML = "Play";
-            }
-        }
+const next1 = document.getElementById('next1');
+const next2 = document.getElementById('next2');
+const back1 = document.getElementById('back1');
+const back2 = document.getElementById('back2');
+
+const progress = document.getElementById('progress');
+//eventhandler
+next1.onclick = function(){
+    form1.style.left="-450px"
+    form2.style.left="40px"
+   progress.style.width = "240px"
+
+}
+back1.onclick = function(){
+    form1.style.left="40px"
+    form2.style.left="450px"
+   progress.style.width = "120px"
+}
+next2.onclick = function(){
+    form2.style.left="-450px"
+    form3.style.left="40px"
+   progress.style.width = "360px"
+}
+back2.onclick = function(){
+    form2.style.left="40px"
+    form3.style.left="450px"
+    progress.style.width = "240px"
+}
+
     </script>
 </body>
-
 </html>
